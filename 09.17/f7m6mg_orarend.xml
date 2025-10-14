@@ -1,0 +1,139 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<f7m6mg_orarend>
+<ora id='1' tipus="elmelet">
+    <targy>Elektrotechnika-elektronika</targy>
+    <idopont>
+        <nap>Hétfő</nap>
+        <kezdes>08:00</kezdes>
+        <vegzes>09:30</vegzes>
+    </idopont>
+    <helyszin>3.Előadó</helyszin>
+    <oktato>Szabó Norbert István</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='2' tipus="gyakorlat">
+    <targy>Elektrotechnika-elektronika</targy>
+    <idopont>
+        <nap>Kedd</nap>
+        <kezdes>14:00</kezdes>
+        <vegzes>15:30</vegzes>
+    </idopont>
+    <helyszin>A1/317</helyszin>
+    <oktato>Dr. Kozsely Gábor</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='3' tipus="elmelet">
+    <targy>Web tecnológiák 1.</targy>
+    <idopont>
+        <nap>Hétfő</nap>
+        <kezdes>10:00</kezdes>
+        <vegzes>11:30</vegzes>
+    </idopont>
+    <helyszin>5.Előadó</helyszin>
+    <oktato>Agárdi Anita</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+
+<ora id='4' tipus="gyakorlat">
+    <targy>Web tecnológiák 1.</targy>
+    <idopont>
+        <nap>Hétfő</nap>
+        <kezdes>14:00</kezdes>
+        <vegzes>15:30</vegzes>
+    </idopont>
+    <helyszin>IN/101</helyszin>
+    <oktato>Agárdi Anita</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+
+<ora id='5' tipus="elmelet">
+    <targy>Mobil programozási alapok</targy>
+    <idopont>
+        <nap>Hétfő</nap>
+        <kezdes>16:00</kezdes>
+        <vegzes>17:30</vegzes>
+    </idopont>
+    <helyszin>IN/101</helyszin>
+    <oktato>Agárdi Anita</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='6' tipus="gyakorlat">
+    <targy>Mobil programozási alapok</targy>
+    <idopont>
+        <nap>Hétfő</nap>
+        <kezdes>18:00</kezdes>
+        <vegzes>19:30</vegzes>
+    </idopont>
+    <helyszin>IN/101</helyszin>
+    <oktato>Agárdi Anita</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='7' tipus="elmelet">
+    <targy>Mesterséges Intelligencia alapok</targy>
+    <idopont>
+        <nap>Kedd</nap>
+        <kezdes>10:00</kezdes>
+        <vegzes>11:30</vegzes>
+    </idopont>
+    <helyszin>32.Előadó</helyszin>
+    <oktato>Kunné Dr. Tamás Judit</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='8' tipus="gyakorlat">
+    <targy>Mesterséges Intelligencia alapok</targy>
+    <idopont>
+        <nap>Kedd</nap>
+        <kezdes>12:00</kezdes>
+        <vegzes>13:30</vegzes>
+    </idopont>
+    <helyszin>32.Előadó</helyszin>
+    <oktato>Fazekas Levente</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='9' tipus="elmelet">
+    <targy>Unix rendszergazda</targy>
+    <idopont>
+        <nap>Szerda</nap>
+        <kezdes>08:00</kezdes>
+        <vegzes>09:30</vegzes>
+    </idopont>
+    <helyszin>IN/103</helyszin>
+    <oktato>Baksa Attila</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='10' tipus="gyakorlat">
+    <targy>Unix rendszergazda</targy>
+    <idopont>
+        <nap>Kedd</nap>
+        <kezdes>17:00</kezdes>
+        <vegzes>18:30</vegzes>
+    </idopont>
+    <helyszin>IN/101</helyszin>
+    <oktato>Baksa Attila</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='11' tipus="elmélet">
+    <targy>Webes adatkezelő környezetek</targy>
+    <idopont>
+        <nap>Szerda</nap>
+        <kezdes>08:00</kezdes>
+        <vegzes>09:30</vegzes>
+    </idopont>
+    <helyszin>A1/310</helyszin>
+    <oktato>Kovács László</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+<ora id='12' tipus="gyakorlat">
+    <targy>Webes adatkezelő környezetek</targy>
+    <idopont>
+        <nap>Szerda</nap>
+        <kezdes>10:00</kezdes>
+        <vegzes>11:30</vegzes>
+    </idopont>
+    <helyszin>IN/103</helyszin>
+    <oktato>Bednarik László</oktato>
+    <szak>Mérnökinformatikus</szak>
+</ora>
+
+
+</f7m6mg_orarend>

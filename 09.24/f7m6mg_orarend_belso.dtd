@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE f7m6mg_orarend [
+<!ELEMENT f7m6mg_orarend (ora*)>
+
+<!ELEMENT ora (targy, idopont, helyszin, oktato, szak)>
+<!ATTLIST ora id CDATA #REQUIRED>
+<!ATTLIST ora tipus (eloadas | gyakorlat | labor) "eloadas">
+
+<!ELEMENT targy (#PCDATA)>
+
+<!ELEMENT idopont (nap, kezdes, vegzes)>
+<!ELEMENT nap (#PCDATA)>
+<!ELEMENT kezdes (#PCDATA)>
+<!ELEMENT vegzes (#PCDATA)>
+
+<!ELEMENT helyszin (#PCDATA)>
+
+<!ELEMENT oktato (#PCDATA)>
+
+<!ELEMENT szak (#PCDATA)>
+]>
+<f7m6mg_orarend>
+    <ora id="1" tipus="eloadas">
+        <targy>Elektro</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <kezdes>0800</kezdes>
+            <vegzes>1000</vegzes>
+        </idopont>
+        <helyszin>III. ea</helyszin>
+        <oktato>Szabó Norbert István</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="2" tipus="eloadas">
+        <targy>Webtech</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <kezdes>1000</kezdes>
+            <vegzes>1200</vegzes>
+        </idopont>
+        <helyszin>V. ea</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="3" tipus="gyakorlat">
+        <targy>Webtech</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <kezdes>1400</kezdes>
+            <vegzes>1600</vegzes>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="4" tipus="eloadas">
+        <targy>Mobil programozás</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <kezdes>1600</kezdes>
+            <vegzes>1800</vegzes>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="5" tipus="gyakorlat">
+        <targy>Mobil programozás</targy>
+        <idopont>
+            <nap>Hétfő</nap>
+            <kezdes>1800</kezdes>
+            <vegzes>2000</vegzes>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Agárdi Anita</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="6" tipus="eloadas">
+        <targy>Mesterséges Intellvegzesencia</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <kezdes>1000</kezdes>
+            <vegzes>1200</vegzes>
+        </idopont>
+        <helyszin>XXXII. ea</helyszin>
+        <oktato>Kunné Tamás Judit</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="7" tipus="gyakorlat">
+        <targy>Mesterséges Intellvegzesencia</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <kezdes>1200</kezdes>
+            <vegzes>1400</vegzes>
+        </idopont>
+        <helyszin>XXXII. ea</helyszin>
+        <oktato>Fazekas Levente Áron</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="8" tipus="gyakorlat">
+        <targy>Elektro</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <kezdes>1400</kezdes>
+            <vegzes>1600</vegzes>
+        </idopont>
+        <helyszin>A1/317</helyszin>
+        <oktato>Kozsely Gábor</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="9" tipus="gyakorlat">
+        <targy>UNIX rendszergazda</targy>
+        <idopont>
+            <nap>Kedd</nap>
+            <kezdes>1700</kezdes>
+            <vegzes>1900</vegzes>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Baksa Attila</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="10" tipus="eloadas">
+        <targy>UNIX rendszergazda</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <kezdes>0800</kezdes>
+            <vegzes>1000</vegzes>
+        </idopont>
+        <helyszin>In/103</helyszin>
+        <oktato>Baksa Attila</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="11" tipus="eloadas">
+        <targy>XML</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <kezdes>0800</kezdes>
+            <vegzes>1000</vegzes>
+        </idopont>
+        <helyszin>In/102</helyszin>
+        <oktato>Kovács László</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+    <ora id="12" tipus="gyakorlat">
+        <targy>XML</targy>
+        <idopont>
+            <nap>Szerda</nap>
+            <kezdes>1000</kezdes>
+            <vegzes>1200</vegzes>
+        </idopont>
+        <helyszin>In/101</helyszin>
+        <oktato>Bednarik László</oktato>
+        <szak>Mérnökinformatikus</szak>
+    </ora>
+</f7m6mg_orarend>

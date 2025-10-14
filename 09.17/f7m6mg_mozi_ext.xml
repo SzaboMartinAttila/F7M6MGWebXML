@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
+<!DOCTYPE mozi SYSTEM "BL_mozi.dtd">
+<mozi>
+    <film id="txn_nxm_2jb" mufaj= "horror">
+        <rendezo id="nzk_4xm_2jb" nev="alex">
+
+        <szinesz id="u5g_4xm_2jb" nev="Madison_Ivy">
+        
+        <iro id="trv_4xm_2jb">
+    </film>
+
+    <film id ="txn_nxm_3jb" mufaj="drama">
+        <rendezo id="nzk_22_320" nev= "Nagy Duma">
+            <vezetorendezo>
+            <segedrendezo id ="nzs_22_320" nev="Kiss Gyula">
+        </rendezo>
+        <szinesz id="213_23_kop" nev="Nagy Árpád">
+          <gyerekszinesz/>
+            <musicalszinesz/>
+            <szinkronszinesz/>
+        </szinesz>
+        
+        <iro id="kok_21_kk0" nev="Porter Harris">
+            <dij>
+            <karakteriro id = "Lawrence Clearance">
+        </iro>
+    </film>
+</mozi> 
