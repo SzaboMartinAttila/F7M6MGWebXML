@@ -1,0 +1,144 @@
+======================================
+Óra ID:1
+Típus: elmelet
+Tárgy: Elektrotechnika-elektronika
+Időpont:
+   Nap: Hétfő
+   Kezdés: 08:00
+   Végzés: 09:30
+Helyszín: 3.Előadó
+Oktató: Szabó Norbert István
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:2
+Típus: gyakorlat
+Tárgy: Elektrotechnika-elektronika
+Időpont:
+   Nap: Kedd
+   Kezdés: 14:00
+   Végzés: 15:30
+Helyszín: A1/317
+Oktató: Dr. Kozsely Gábor
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:3
+Típus: elmelet
+Tárgy: Web tecnológiák 1.
+Időpont:
+   Nap: Hétfő
+   Kezdés: 10:00
+   Végzés: 11:30
+Helyszín: 5.Előadó
+Oktató: Agárdi Anita
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:4
+Típus: gyakorlat
+Tárgy: Web tecnológiák 1.
+Időpont:
+   Nap: Hétfő
+   Kezdés: 14:00
+   Végzés: 15:30
+Helyszín: IN/101
+Oktató: Agárdi Anita
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:5
+Típus: elmelet
+Tárgy: Mobil programozási alapok
+Időpont:
+   Nap: Hétfő
+   Kezdés: 16:00
+   Végzés: 17:30
+Helyszín: IN/101
+Oktató: Agárdi Anita
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:6
+Típus: gyakorlat
+Tárgy: Mobil programozási alapok
+Időpont:
+   Nap: Hétfő
+   Kezdés: 18:00
+   Végzés: 19:30
+Helyszín: IN/101
+Oktató: Agárdi Anita
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:7
+Típus: elmelet
+Tárgy: Mesterséges Intelligencia alapok
+Időpont:
+   Nap: Kedd
+   Kezdés: 10:00
+   Végzés: 11:30
+Helyszín: 32.Előadó
+Oktató: Kunné Dr. Tamás Judit
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:8
+Típus: gyakorlat
+Tárgy: Mesterséges Intelligencia alapok
+Időpont:
+   Nap: Kedd
+   Kezdés: 12:00
+   Végzés: 13:30
+Helyszín: 32.Előadó
+Oktató: Fazekas Levente
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:9
+Típus: elmelet
+Tárgy: Unix rendszergazda
+Időpont:
+   Nap: Szerda
+   Kezdés: 08:00
+   Végzés: 09:30
+Helyszín: IN/103
+Oktató: Baksa Attila
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:10
+Típus: gyakorlat
+Tárgy: Unix rendszergazda
+Időpont:
+   Nap: Kedd
+   Kezdés: 17:00
+   Végzés: 18:30
+Helyszín: IN/101
+Oktató: Baksa Attila
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:11
+Típus: elmélet
+Tárgy: Webes adatkezelő környezetek
+Időpont:
+   Nap: Szerda
+   Kezdés: 08:00
+   Végzés: 09:30
+Helyszín: A1/310
+Oktató: Kovács László
+Szak: Mérnökinformatikus
+======================================
+======================================
+Óra ID:12
+Típus: gyakorlat
+Tárgy: Webes adatkezelő környezetek
+Időpont:
+   Nap: Szerda
+   Kezdés: 10:00
+   Végzés: 11:30
+Helyszín: IN/103
+Oktató: Bednarik László
+Szak: Mérnökinformatikus
+======================================
