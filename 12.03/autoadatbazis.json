@@ -1,0 +1,32 @@
+{
+  "owners": [
+    {
+      "nev": "Minta János",
+      "cim": "Budapest, Fő út 1.",
+      "telefon": "06-30-123-4567"
+    },
+    {
+      "nev": "Teszt Elek",
+      "cim": "Miskolc, Egyetemváros",
+      "telefon": "06-20-987-6543"
+    }
+  ],
+  "cars": [
+    {
+      "rendszam": "ABC-123",
+      "tipus": "Suzuki Swift",
+      "szin": "Piros",
+      "kor": "10",
+      "ar": "1500000",
+      "ownerId": 1
+    },
+    {
+      "rendszam": "XYZ-999",
+      "tipus": "Opel Astra",
+      "szin": "Kék",
+      "kor": "5",
+      "ar": "3000000",
+      "ownerId": 2
+    }
+  ]
+}

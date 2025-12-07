@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Órarend Megjelenítő</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header-title {
+            text-align: center;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .control-box {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 5px solid #0275d8;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn-load { background-color: #5bc0de; color: white; }
+        .btn-load:hover { background-color: #31b0d5; }
+
+        /* Táblázat osztályok */
+        .timetable-table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .timetable-table th {
+            background-color: #343a40;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .timetable-table td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            color: #555;
+        }
+
+        .timetable-table tr:nth-child(even) { background-color: #f8f9fa; }
+        .timetable-table tr:hover { background-color: #e2e6ea; }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <h1 class="header-title">NEPTUNKÓD Órarend JSON</h1>
+
+    <div class="control-box">
+        <div class="input-group">
+            <label class="form-label">JSON Fájl betöltése:</label>
+            <input type="file" id="jsonFile">
+            <button class="btn btn-load" onclick="loadToLocalStorage()">LocalStorage betöltése</button>
+        </div>
+        
+        <div class="input-group">
+            <label class="form-label">Keresés tárgy szerint:</label>
+            <input type="text" id="searchSubject" class="form-input" onkeyup="renderTimetable()" placeholder="pl. Web...">
+        </div>
+    </div>
+
+    <h3>Órarend Lista</h3>
+    <div style="overflow-x:auto;">
+        <table id="timetable" class="timetable-table">
+            <thead>
+                <tr>
+                    <th>Tárgy</th>
+                    <th>Nap</th>
+                    <th>Kezdés</th> <th>Végzés</th> <th>Helyszín</th>
+                    <th>Oktató</th>
+                    <th>Szak</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function loadToLocalStorage() {
+        const fileInput = document.getElementById('jsonFile');
+        if (fileInput.files.length === 0) { alert("Válassz fájlt!"); return; }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const rawData = JSON.parse(e.target.result);
+                
+                
+                let dataList = [];
+                
+                
+                const rootKey = Object.keys(rawData)[0]; 
+                if (rawData[rootKey] && rawData[rootKey].ora) {
+                    dataList = rawData[rootKey].ora;
+                } else {
+                    alert("Hiba: A JSON szerkezete nem megfelelő!");
+                    return;
+                }
+
+                localStorage.setItem('orarendDB', JSON.stringify(dataList));
+                alert("Adatok betöltve Local Storage-ba!");
+                renderTimetable();
+            } catch(err) {
+                console.error(err);
+                alert("Hiba a JSON feldolgozásakor!");
+            }
+        };
+        reader.readAsText(fileInput.files[0]);
+    }
+
+    function renderTimetable() {
+        const data = JSON.parse(localStorage.getItem('orarendDB')) || [];
+        const tbody = document.querySelector('#timetable tbody');
+        const filter = document.getElementById('searchSubject').value.toLowerCase();
+        
+        tbody.innerHTML = "";
+
+        const filteredData = data.filter(item => item.targy.toLowerCase().includes(filter));
+
+        if (filteredData.length === 0) {
+            tbody.innerHTML = "<tr><td colspan='7' style='text-align:center; padding:20px;'>Nincs adat vagy találat.</td></tr>";
+            return;
+        }
+
+        filteredData.forEach(row => {
+           
+            const tr = `<tr>
+                <td>${row.targy} <br><small>(${row.tipus})</small></td>
+                <td>${row.idopont.nap}</td>
+                <td>${row.idopont.kezdes}</td>
+                <td>${row.idopont.vegzes}</td>
+                <td>${row.helyszin}</td>
+                <td>${row.oktato}</td>
+                <td>${row.szak}</td>
+            </tr>`;
+            tbody.innerHTML += tr;
+        });
+    }
+
+   
+    renderTimetable();
+</script>
+</body>
+</html>

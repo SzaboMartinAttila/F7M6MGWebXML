@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="keresztnevTipus">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="vezeteknevTipus">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+        
+    <xs:simpleType name="becenevTipus">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+    
+     <xs:simpleType name="korTipus">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="idTipus">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>

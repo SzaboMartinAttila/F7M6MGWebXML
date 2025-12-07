@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Hallgatók Kezelése - LocalStorage</title>
+    <style>
+        body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; }
+        .container { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; }
+        h2 { margin-top: 0; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; }
+        button { margin-top: 15px; padding: 10px 15px; cursor: pointer; background-color: #5cb85c; color: white; border: none; border-radius: 3px; }
+        button:hover { background-color: #4cae4c; }
+        button.delete { background-color: #d9534f; }
+        button.edit { background-color: #f0ad4e; margin-right: 5px;}
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .action-btn { padding: 5px 10px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Új hallgató hozzáadása</h2> <input type="hidden" id="editIndex">
+    <label>Név:</label>
+    <input type="text" id="nev">
+    <label>Évfolyam:</label>
+    <input type="number" id="evfolyam">
+    <label>Szak:</label>
+    <input type="text" id="szak" value="PTI"> <label>Email:</label>
+    <input type="email" id="email" placeholder="@">
+    <label>NEPTUN kód:</label>
+    <input type="text" id="neptun">
+    <button onclick="saveStudent()">Mentés</button>
+</div>
+
+<div class="container">
+    <label>Keresés (minden mezőben):</label> <input type="text" id="search" onkeyup="renderTable()" placeholder="Írj be valamit...">
+    
+    <label>Rendezés:</label> <select id="sort" onchange="renderTable()">
+        <option value="none">Nincs rendezés</option>
+        <option value="name">Név szerint</option>
+        <option value="year">Évfolyam szerint</option>
+    </select>
+
+    <div style="margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px;">
+        <h3>Export / Import JSON</h3> <button onclick="exportJSON()" style="background-color: #0275d8;">Export JSON</button>
+        <input type="file" id="importFile" accept=".json" style="display: inline-block; width: auto; margin-left: 10px;">
+        <button onclick="importJSON()" style="background-color: #ddd; color: black;">Import JSON</button>
+    </div>
+</div>
+
+<h3>Hallgatók listája</h3> <table id="studentTable">
+    <thead>
+        <tr>
+            <th>Név</th>
+            <th>Évfolyam</th>
+            <th>Szak</th>
+            <th>Email</th>
+            <th>NEPTUN</th>
+            <th>Műveletek</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    
+    let students = JSON.parse(localStorage.getItem('studentsDB')) || [];
+    renderTable();
+
+    function saveStudent() {
+        const nev = document.getElementById('nev').value;
+        const evfolyam = document.getElementById('evfolyam').value;
+        const szak = document.getElementById('szak').value;
+        const email = document.getElementById('email').value;
+        const neptun = document.getElementById('neptun').value;
+        const editIndex = document.getElementById('editIndex').value;
+
+        if (!nev || !neptun) { alert("Név és Neptun kód kötelező!"); return; }
+
+        const studentObj = { nev, evfolyam, szak, email, neptun };
+
+        if (editIndex === "") {
+            students.push(studentObj); 
+        } else {
+            students[editIndex] = studentObj;
+            document.getElementById('editIndex').value = "";
+        }
+
+        updateLocalStorage();
+        clearForm();
+        renderTable();
+    }
+
+    function updateLocalStorage() {
+        localStorage.setItem('studentsDB', JSON.stringify(students));
+    }
+
+    function clearForm() {
+        document.getElementById('nev').value = "";
+        document.getElementById('evfolyam').value = "";
+        document.getElementById('szak').value = "PTI";
+        document.getElementById('email').value = "";
+        document.getElementById('neptun').value = "";
+        document.getElementById('editIndex').value = "";
+    }
+
+    function deleteStudent(index) {
+        if(confirm("Biztosan törlöd?")) {
+            students.splice(index, 1); 
+            renderTable();
+        }
+    }
+
+    function loadToEdit(index) {
+        const s = students[index];
+        document.getElementById('nev').value = s.nev;
+        document.getElementById('evfolyam').value = s.evfolyam;
+        document.getElementById('szak').value = s.szak;
+        document.getElementById('email').value = s.email;
+        document.getElementById('neptun').value = s.neptun;
+        document.getElementById('editIndex').value = index;
+    }
+
+    function renderTable() {
+        const tbody = document.querySelector('#studentTable tbody');
+        tbody.innerHTML = "";
+        const searchTerm = document.getElementById('search').value.toLowerCase();
+        const sortType = document.getElementById('sort').value;
+
+      
+        let filtered = students.filter(s => 
+            s.nev.toLowerCase().includes(searchTerm) || 
+            s.neptun.toLowerCase().includes(searchTerm) ||
+            s.szak.toLowerCase().includes(searchTerm) ||
+            s.email.toLowerCase().includes(searchTerm) ||
+            s.evfolyam.toString().includes(searchTerm)
+        );
+
+        if (sortType === 'name') {
+            filtered.sort((a, b) => a.nev.localeCompare(b.nev));
+        } else if (sortType === 'year') {
+            filtered.sort((a, b) => a.evfolyam - b.evfolyam);
+        }
+
+
+        filtered.forEach((s, index) => {
+            
+            const originalIndex = students.indexOf(s); 
+            const row = `<tr>
+                <td>${s.nev}</td>
+                <td>${s.evfolyam}</td>
+                <td>${s.szak}</td>
+                <td>${s.email}</td>
+                <td>${s.neptun}</td>
+                <td>
+                    <button class="action-btn edit" onclick="loadToEdit(${originalIndex})">Módosít</button>
+                    <button class="action-btn delete" onclick="deleteStudent(${originalIndex})">Töröl</button>
+                </td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    }
+
+   
+    function exportJSON() {
+        const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(students));
+        const downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "students.json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+    }
+
+   
+    function importJSON() {
+        const file = document.getElementById('importFile').files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                students = JSON.parse(e.target.result);
+                updateLocalStorage();
+                renderTable();
+                alert("Sikeres importálás!");
+            } catch(err) {
+                alert("Hiba a JSON fájlban!");
+            }
+        };
+        reader.readAsText(file);
+    }
+</script>
+</body>
+</html>
