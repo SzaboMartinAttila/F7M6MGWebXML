@@ -106,6 +106,11 @@
             <xs:field xpath="@RendelesID"/>
         </xs:key>
 
+        <xs:unique name="JarmuRendszamUnique">
+            <xs:selector xpath="Jarmu"/>
+            <xs:field xpath="@Rendszam"/>
+        </xs:unique>
+
         <xs:keyref name="RendelesVevoRef" refer="VevoKey">
             <xs:selector xpath="Rendeles/VevoRef"/>
             <xs:field xpath="."/>

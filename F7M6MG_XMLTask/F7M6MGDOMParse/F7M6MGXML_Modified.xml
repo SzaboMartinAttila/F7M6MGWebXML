@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Pizzeria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Neptunkod_XMLSchema.xsd">
+        
+    <Vevo VevoID="1">
+                
+        <Nev>Kovács János</Nev>
+                
+        <Cim>
+                        
+            <Iranyitoszam>3515</Iranyitoszam>
+                        
+            <Varos>Miskolc</Varos>
+                        
+            <Utca>Egyetemváros út 1.</Utca>
+                    
+        </Cim>
+                
+        <Telefonszam>06301112222</Telefonszam>
+                
+        <Telefonszam>06203334444</Telefonszam>
+                
+        <Email>kovacs.janos@uni-miskolc.hu</Email>
+            
+    </Vevo>
+        
+    <Vevo VevoID="2">
+                
+        <Nev>Nagy Éva</Nev>
+                
+        <Cim>
+                        
+            <Iranyitoszam>1055</Iranyitoszam>
+                        
+            <Varos>Budapest</Varos>
+                        
+            <Utca>Kossuth tér 2.</Utca>
+                    
+        </Cim>
+                
+        <Telefonszam>06705556666</Telefonszam>
+                
+        <Email>nagy.eva@email.hu</Email>
+            
+    </Vevo>
+        
+    
+    <Vevo VevoID="3">
+                
+        <Nev>Kiss Péter</Nev>
+                
+        <Cim>
+                        
+            <Iranyitoszam>4032</Iranyitoszam>
+                        
+            <Varos>Debrecen</Varos>
+                        
+            <Utca>Egyetem tér 1.</Utca>
+                    
+        </Cim>
+                
+        <Telefonszam>06309998888</Telefonszam>
+                
+        <Email>kiss.peter@email.hu</Email>
+            
+    </Vevo>
+        
+    <Futar FutarID="1">
+                
+        <Nev>Sebes István</Nev>
+                
+        <Telefonszam>06201234567</Telefonszam>
+                
+        <SzuletesiDatum>1995-05-20</SzuletesiDatum>
+            
+    </Futar>
+        
+    <Futar FutarID="2">
+                
+        <Nev>Gyors Gábor</Nev>
+                
+        <Telefonszam>06309876543</Telefonszam>
+                
+        <SzuletesiDatum>2000-11-15</SzuletesiDatum>
+            
+    </Futar>
+        
+    <Jarmu Rendszam="ABC-123">
+                
+        <Tipus>Opel Corsa</Tipus>
+                
+        <MuszakiErvenyesseg>2026-01-01</MuszakiErvenyesseg>
+                
+        <Uzemanyag>Benzin</Uzemanyag>
+         
+        <TulajdonosFutar>1</TulajdonosFutar>
+            
+    </Jarmu>
+        
+    <Jarmu Rendszam="XYZ-789">
+                
+        <Tipus>Suzuki Swift</Tipus>
+                
+        <MuszakiErvenyesseg>2025-06-15</MuszakiErvenyesseg>
+                
+        <Uzemanyag>Hybrid</Uzemanyag>
+         
+        <TulajdonosFutar>2</TulajdonosFutar>
+            
+    </Jarmu>
+        
+    <Pizza PizzaID="1">
+                
+        <Nev>Margherita</Nev>
+                
+        <Ar>2800</Ar>
+                
+        <Meret>32</Meret>
+            
+    </Pizza>
+        
+    <Pizza PizzaID="2">
+                
+        <Nev>Songoku</Nev>
+                
+        <Ar>3200</Ar>
+                
+        <Meret>32</Meret>
+            
+    </Pizza>
+        
+     
+    <Pizza PizzaID="3">
+                
+        <Nev>Hawaii</Nev>
+                
+        <Ar>3000</Ar>
+                
+        <Meret>45</Meret>
+            
+    </Pizza>
+        
+    <Rendeles RendelesID="1">
+                
+        <VevoRef>1</VevoRef>
+                
+        <FutarRef>1</FutarRef>
+                
+        <Datum>2025-10-15</Datum>
+                
+        <Vegosszeg>5700</Vegosszeg>
+                
+        <FizetesMod>Bankkartya</FizetesMod>
+                
+        <RendelesTetel Darab="1" PizzaRef="1"/>
+                
+        <RendelesTetel Darab="1" PizzaRef="2"/>
+            
+    </Rendeles>
+        
+    <Rendeles RendelesID="2">
+                
+        <VevoRef>2</VevoRef>
+                
+        <FutarRef>2</FutarRef>
+                
+        <Datum>2025-10-16</Datum>
+                
+        <Vegosszeg>5000</Vegosszeg>
+                
+        <FizetesMod>Online átutalás</FizetesMod>
+                
+        <RendelesTetel Darab="2" PizzaRef="1"/>
+            
+    </Rendeles>
+        
+    
+    <Rendeles RendelesID="3">
+                
+        <VevoRef>1</VevoRef>
+                
+        <FutarRef>2</FutarRef>
+                
+        <Datum>2025-10-17</Datum>
+                
+        <Vegosszeg>3000</Vegosszeg>
+                
+        <FizetesMod>Bankkartya</FizetesMod>
+                
+        <RendelesTetel Darab="1" PizzaRef="3"/>
+         
+    
+    </Rendeles>
+    
+    <Pizza PizzaID="4">
+        <Nev>Carbonara</Nev>
+        <Ar>3500</Ar>
+        <Meret>32</Meret>
+    </Pizza>
+    <Vevo VevoID="4">
+        <Nev>Szabó Anna</Nev>
+        <Cim>
+            <Iranyitoszam>6720</Iranyitoszam>
+            <Varos>Szeged</Varos>
+            <Utca>Dugonics tér 13.</Utca>
+        </Cim>
+        <Telefonszam>06204445555</Telefonszam>
+        <Email>szabo.anna@email.hu</Email>
+    </Vevo>
+</Pizzeria>
